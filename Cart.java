@@ -9,7 +9,7 @@ public class Cart{
     public void addToCart(Item item,int quantity){
          if (quantity<0){
             System.out.println("Enter valid Quantity for item");
-            System.exit(0); 
+            return; 
         }
         for(int i = 0; i<items.size(); i++){
              if(items.get(i).item.id == item.id){
@@ -18,7 +18,7 @@ public class Cart{
             }
         }
         CartItem newItem = new CartItem(item,quantity);
-        items.add(newItem); 
+        items.add(newItem);
     }
 
     public int displayQty(Item item){
@@ -33,7 +33,7 @@ public class Cart{
     public void updateQty(Item item, Integer quantity){
         if(quantity<0){
             System.out.println("Enter valid Quantity for item");
-            System.exit(0); 
+            return; 
         }
          for(int i = 0; i<items.size(); i++){
             if(items.get(i).item.id == item.id){
@@ -53,6 +53,7 @@ public class Cart{
             }
         }
         System.out.println("Item now Found"); 
+        System.exit(0); 
     }
 
     public double displayBill(){
