@@ -14,6 +14,7 @@ public class Cart{
         for(int i = 0; i<items.size(); i++){
              if(items.get(i).item.id == item.id){
                 items.get(i).quantity += quantity;  
+                return; 
             }
         }
         CartItem newItem = new CartItem(item,quantity);
@@ -41,6 +42,7 @@ public class Cart{
             }
         }
         System.out.println("Item now Found"); 
+        System.exit(0); 
     }
 
     public void deleteItem(Item item){

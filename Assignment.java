@@ -20,9 +20,3 @@ public class Assignment{
 
     }
 }
-
-
-
-// Pending 
-// 1) Validations
-// 2) Item addition and uniqueness
