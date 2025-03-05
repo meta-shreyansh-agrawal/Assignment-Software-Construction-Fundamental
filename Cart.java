@@ -7,6 +7,15 @@ public class Cart{
     }
 
     public void addToCart(Item item,int quantity){
+         if (quantity<0){
+            System.out.println("Enter valid Quantity for item");
+            System.exit(0); 
+        }
+        for(int i = 0; i<items.size(); i++){
+             if(items.get(i).item.id == item.id){
+                items.get(i).quantity += quantity;  
+            }
+        }
         CartItem newItem = new CartItem(item,quantity);
         items.add(newItem); 
     }
@@ -17,23 +26,31 @@ public class Cart{
                 return items.get(i).quantity; 
             }
         }
-        return -1; 
+        return 0; 
     }
 
     public void updateQty(Item item, Integer quantity){
+        if(quantity<0){
+            System.out.println("Enter valid Quantity for item");
+            System.exit(0); 
+        }
          for(int i = 0; i<items.size(); i++){
             if(items.get(i).item.id == item.id){
                 items.get(i).quantity = quantity; 
+                return; 
             }
         }
+        System.out.println("Item now Found"); 
     }
 
     public void deleteItem(Item item){
-         for(int i = 0; i<items.size(); i++){
+        for(int i = 0; i<items.size(); i++){
             if(items.get(i).item.id == item.id){
-                items.remove(i);    
+                items.remove(i); 
+                return;    
             }
         }
+        System.out.println("Item now Found"); 
     }
 
     public double displayBill(){
