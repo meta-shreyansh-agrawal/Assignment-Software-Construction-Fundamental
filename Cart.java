@@ -42,7 +42,7 @@ public class Cart{
             }
         }
         System.out.println("Item now Found"); 
-        System.exit(0); 
+        return; 
     }
 
     public void deleteItem(Item item){
@@ -53,7 +53,7 @@ public class Cart{
             }
         }
         System.out.println("Item now Found"); 
-        System.exit(0); 
+        return; 
     }
 
     public double displayBill(){
