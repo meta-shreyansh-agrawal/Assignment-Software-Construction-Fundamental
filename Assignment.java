@@ -22,7 +22,7 @@ public class Assignment{
         int quantity = 0; 
         while(choice != 0){
             System.out.println("\nWelcome to shopping\nEnter your choice\n1)List Items\n2)List Cart\n3)Add Item to Cart\n4)Display Item Quantity\n5)Update Item Quantity\n6)Remove Item from Cart\n7)Get Total Bill\n0)Exit Program"); 
-            choice = sc.nextInt(); 
+            choice = Util.inputNumberInRange(sc,0,7); 
             System.out.println("Your Choice is :"+choice); 
             switch (choice) {
                 case 1: 
@@ -50,51 +50,27 @@ public class Assignment{
                 case 3: 
                 // Add Item to Cart
                 System.out.print("Enter Item Number :"); 
-                number = sc.nextInt(); 
-                if (number <=0 || number>=items.length){
-                    System.out.println("Item does not exist"); 
-                    break; 
-                }
+                number = Util.inputNumberInRange(sc,1,items.length);
                 System.out.print("Enter Quantity :"); 
-                quantity = sc.nextInt(); 
-                if(quantity<=0){
-                    System.out.println("Enter valid Quantity"); 
-                    break; 
-                }
+                quantity = Util.inputNaturalNumber(sc); 
                 cart.addToCart(items[number-1],quantity); 
                 break; 
                 case 4: 
                 System.out.print("Enter Item Number from cart :"); 
-                number = sc.nextInt(); 
-                if (number <=0 || number>=cart.items.size()){
-                    System.out.println("Item does not exist"); 
-                    break; 
-                }
+                number = Util.inputNumberInRange(sc,1,items.length);
                 System.out.println("Quantity is: "+cart.displayQty(cart.items.get(number-1).item));
                 break; 
                 case 5: 
                 System.out.print("Enter Item Number from cart: "); 
-                number = sc.nextInt(); 
-                if (number <=0 || number>=cart.items.size()){
-                    System.out.println("Item does not exist"); 
-                    break; 
-                }
+                number = Util.inputNumberInRange(sc,1,items.length);
                 System.out.print("Enter new Quantity :"); 
-                quantity = sc.nextInt();
-                if(quantity<=0){
-                    System.out.println("Enter valid Quantity"); 
-                    break; 
-                }
+                quantity = Util.inputNaturalNumber(sc); 
                 cart.updateQty(cart.items.get(number-1).item,quantity); 
                 System.out.println("Quantity updated Sucessfully"); 
                 break; 
                 case 6: 
                 System.out.print("Enter Item Number from cart: "); 
-                number = sc.nextInt(); 
-                if (number <=0 || number>=cart.items.size()){
-                    System.out.println("Item does not exist"); 
-                    break; 
-                }
+                number = Util.inputNumberInRange(sc,1,items.length);
                 cart.deleteItem(cart.items.get(number-1).item); 
                 System.out.println("Item deleted Successfully"); 
                 break; 
