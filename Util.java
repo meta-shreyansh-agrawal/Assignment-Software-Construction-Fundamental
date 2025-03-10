@@ -13,6 +13,7 @@ public class Util{
                 }
             }catch(InputMismatchException e){
                 System.out.println("Enter valid Number"); 
+                sc.nextLine();
             }
         }
     }
@@ -27,6 +28,7 @@ public class Util{
                 }
             }catch(IllegalArgumentException e){
                 System.out.println("Enter valid Natural Number"); 
+                sc.nextLine();
             }
         }
     }
