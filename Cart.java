@@ -21,39 +21,22 @@ public class Cart{
         items.add(newItem);
     }
 
-    public int displayQty(Item item){
-        for(int i = 0; i<items.size(); i++){
-            if(items.get(i).item.id == item.id){
-                return items.get(i).quantity; 
-            }
-        }
-        return 0; 
+    public int displayQty(int n){
+        return items.get(n).quantity;  
     }
 
-    public void updateQty(Item item, Integer quantity){
+    public void updateQty(int no, Integer quantity){
         if(quantity<0){
             System.out.println("Enter valid Quantity for item");
             return; 
         }
-         for(int i = 0; i<items.size(); i++){
-            if(items.get(i).item.id == item.id){
-                items.get(i).quantity = quantity; 
-                return; 
-            }
-        }
+        items.get(no).quantity = quantity; 
         System.out.println("Item now Found"); 
         return; 
     }
 
-    public void deleteItem(Item item){
-        for(int i = 0; i<items.size(); i++){
-            if(items.get(i).item.id == item.id){
-                items.remove(i); 
-                return;    
-            }
-        }
-        System.out.println("Item now Found"); 
-        return; 
+    public void deleteItem(int no){
+        items.remove(no); 
     }
 
     public double displayBill(){

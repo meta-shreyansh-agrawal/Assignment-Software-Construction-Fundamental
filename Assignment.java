@@ -1,5 +1,4 @@
 import java.util.Scanner; 
-import java.util.ArrayList; 
 
 public class Assignment{
     public static void main(String[] args){
@@ -26,59 +25,59 @@ public class Assignment{
             System.out.println("Your Choice is :"+choice); 
             switch (choice) {
                 case 1: 
-                // List of all Items 
-                if (items.length<=0){
-                    System.out.println("No Items Avaliable"); 
+                    // List of all Items 
+                    if (items.length<=0){
+                        System.out.println("No Items Avaliable"); 
+                        break; 
+                    }
+                    for(int i = 0; i<items.length;i++){
+                        Item item = items[i]; 
+                        System.out.println((i+1)+")"+item.name+"\n  price: "+item.price+"\n  description: "+item.description); 
+                    }
                     break; 
-                }
-                for(int i = 0; i<items.length;i++){
-                    Item item = items[i]; 
-                    System.out.println((i+1)+")"+item.name+"\n  price: "+item.price+"\n  description: "+item.description); 
-                }
-                break; 
                 case 2: 
-                // List of Items in Cart
-                if (cart.items.isEmpty()){
-                    System.out.println("Cart is Empty"); 
-                    break; 
-                }
-                for(int i = 0; i<cart.items.size();i++){
-                    CartItem cartItem = cart.items.get(i); 
-                    System.out.println((i+1)+")"+cartItem.item.name+"\n  price: "+cartItem.item.price+"\n  quantity: "+cartItem.quantity+"\n  description: "+cartItem.item.description);
-                }
-                break;
+                    // List of Items in Cart
+                    if (cart.items.isEmpty()){
+                        System.out.println("Cart is Empty"); 
+                        break; 
+                    }
+                    for(int i = 0; i<cart.items.size();i++){
+                        CartItem cartItem = cart.items.get(i); 
+                        System.out.println((i+1)+")"+cartItem.item.name+"\n  price: "+cartItem.item.price+"\n  quantity: "+cartItem.quantity+"\n  description: "+cartItem.item.description);
+                    }
+                    break;
                 case 3: 
-                // Add Item to Cart
-                System.out.print("Enter Item Number :"); 
-                number = Util.inputNumberInRange(sc,1,items.length);
-                System.out.print("Enter Quantity :"); 
-                quantity = Util.inputNaturalNumber(sc); 
-                cart.addToCart(items[number-1],quantity); 
-                break; 
+                    // Add Item to Cart
+                    System.out.print("Enter Item Number :"); 
+                    number = Util.inputNumberInRange(sc,1,items.length);
+                    System.out.print("Enter Quantity :"); 
+                    quantity = Util.inputNaturalNumber(sc); 
+                    cart.addToCart(items[number-1],quantity); 
+                    break; 
                 case 4: 
-                System.out.print("Enter Item Number from cart :"); 
-                number = Util.inputNumberInRange(sc,1,items.length);
-                System.out.println("Quantity is: "+cart.displayQty(cart.items.get(number-1).item));
-                break; 
+                    System.out.print("Enter Item Number from cart :"); 
+                    number = Util.inputNumberInRange(sc,1,items.length);
+                    System.out.println("Quantity is: "+cart.displayQty(number-1));
+                    break; 
                 case 5: 
-                System.out.print("Enter Item Number from cart: "); 
-                number = Util.inputNumberInRange(sc,1,items.length);
-                System.out.print("Enter new Quantity :"); 
-                quantity = Util.inputNaturalNumber(sc); 
-                cart.updateQty(cart.items.get(number-1).item,quantity); 
-                System.out.println("Quantity updated Sucessfully"); 
-                break; 
+                    System.out.print("Enter Item Number from cart: "); 
+                    number = Util.inputNumberInRange(sc,1,items.length);
+                    System.out.print("Enter new Quantity :"); 
+                    quantity = Util.inputNaturalNumber(sc); 
+                    cart.updateQty(number-1,quantity); 
+                    System.out.println("Quantity updated Sucessfully"); 
+                    break; 
                 case 6: 
-                System.out.print("Enter Item Number from cart: "); 
-                number = Util.inputNumberInRange(sc,1,items.length);
-                cart.deleteItem(cart.items.get(number-1).item); 
-                System.out.println("Item deleted Successfully"); 
-                break; 
+                    System.out.print("Enter Item Number from cart: "); 
+                    number = Util.inputNumberInRange(sc,1,items.length);
+                    cart.deleteItem(number-1); 
+                    System.out.println("Item deleted Successfully"); 
+                    break; 
                 case 7: 
-                System.out.println("Total Bill is: "+cart.displayBill()); 
-                break; 
-                case 0:
-                System.exit(0); 
+                    System.out.println("Total Bill is: "+cart.displayBill()); 
+                    break; 
+                    case 0:
+                    System.exit(0); 
             }
 
         }
