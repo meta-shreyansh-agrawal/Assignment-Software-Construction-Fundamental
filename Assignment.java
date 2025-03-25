@@ -32,7 +32,7 @@ public class Assignment{
                     }
                     for(int i = 0; i<items.length;i++){
                         Item item = items[i]; 
-                        System.out.println((i+1)+")"+item.name+"\n  price: "+item.price+"\n  description: "+item.description); 
+                        System.out.println((i+1)+")"+item.name+"\n  id: "+item.id+"\n  price: "+item.price+"\n  description: "+item.description); 
                     }
                     break; 
                 case 2: 
