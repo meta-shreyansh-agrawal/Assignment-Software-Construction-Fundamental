@@ -1,14 +1,17 @@
-import java.util.UUID; 
 public class Item{
-    UUID id; 
+    
+    static int idCount = 1; 
+    
+    int id; 
     String name; 
     String description; 
     int price; 
-
+    
     Item(String name, String description, int price){
-        this.id = UUID.randomUUID(); 
+        this.id = idCount; 
         this.name = name; 
         this.description = description; 
         this.price = price;  
+        idCount++; 
     }
 }
