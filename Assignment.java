@@ -53,20 +53,20 @@ public class Assignment{
                 case 4: 
                     System.out.print("Enter Item id from cart :"); 
                     number = Util.inputNumberInRange(sc,1,items.length);
-                    System.out.println("Quantity is: "+cart.displayQty(number-1));
+                    System.out.println("Quantity is: "+cart.displayQty(number));
                     break; 
                 case 5: 
                     System.out.print("Enter Item id from cart: "); 
                     number = Util.inputNumberInRange(sc,1,items.length);
                     System.out.print("Enter new Quantity :"); 
                     quantity = Util.inputNaturalNumber(sc); 
-                    cart.updateQty(number-1,quantity); 
+                    cart.updateQty(number,quantity); 
                     System.out.println("Quantity updated Sucessfully"); 
                     break; 
                 case 6: 
                     System.out.print("Enter Item ID from cart: "); 
                     number = Util.inputNumberInRange(sc,1,items.length);
-                    cart.deleteItem(number-1); 
+                    cart.deleteItem(number); 
                     System.out.println("Item deleted Successfully"); 
                     break; 
                 case 7: 
